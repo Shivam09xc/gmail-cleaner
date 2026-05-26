@@ -20,7 +20,7 @@ export async function GET() {
     const threadsTotal = profile.data.threadsTotal || 0;
 
     // Unread threads count
-    const unreadRes = await gmail.users.messages.list({
+    const unreadRes: any = await gmail.users.messages.list({
       userId: "me",
       q: "is:unread -is:starred -is:important -in:sent -in:drafts -in:spam",
       maxResults: 1,
