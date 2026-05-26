@@ -25,7 +25,7 @@ export async function POST() {
 
     // Saare unread emails fetch karo — page by page
     do {
-      const listRes = await gmail.users.messages.list({
+      const listRes: any = await gmail.users.messages.list({
         userId: "me",
         q: "is:unread -is:starred -is:important -in:sent -in:drafts -in:spam",
         maxResults: 500,
